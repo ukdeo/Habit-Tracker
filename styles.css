@@ -217,8 +217,97 @@ body::before{content:'';position:fixed;inset:0;z-index:1;pointer-events:none;bac
   .nav-item::before{display:none;}
   .main{padding:28px 24px;}
 }
-@media(max-width:600px){
-  .page-head{flex-direction:column;align-items:flex-start;gap:12px;}
-  .filter-bar{justify-content:flex-start;}
-  .chart-grid{grid-template-columns:1fr;}
+
+@media (max-width:600px) {
+
+  /* Sidebar becomes a bottom tab bar */
+  .sidebar {
+    position: fixed !important;   
+    top: auto !important;         
+    bottom: 0 !important;         
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 70px;
+    min-height: auto !important;  
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 10px;
+    gap: 0;
+    background: var(--surface);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border);
+    border-right: none;
+    z-index: 50;
+    overflow: visible;
+  }
+
+  /* Hide desktop-only elements */
+  .logo-block,
+  .sidebar-spacer,
+  .streak-card,
+  .nav-label,
+  .nav-pill,
+  .nav-pulse {
+    display: none !important;
+  }
+
+  /* Nav menu layout for bottom tab bar */
+  .nav-menu {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Nav items style for bottom tabs */
+  .nav-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 0;
+    font-size: 0.65rem;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  .nav-item .nav-icon {
+    font-size: 1.5rem;
+  }
+
+  /* Optional active indicator */
+  .nav-item.active::after {
+    content: '';
+    width: 25%;
+    height: 3px;
+    background: var(--cyan);
+    border-radius: 2px;
+    margin-top: 4px;
+  }
+
+  .main {
+    padding: 20px 16px 90px !important;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Mobile layout fixes */
+  .page-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .filter-bar {
+    justify-content: flex-start;
+  }
+
+  .chart-grid {
+    grid-template-columns: 1fr;
+  }
 }
