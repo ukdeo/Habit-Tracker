@@ -217,16 +217,8 @@ body::before{content:'';position:fixed;inset:0;z-index:1;pointer-events:none;bac
   .nav-item::before{display:none;}
   .main{padding:28px 24px;}
 }
-@media(max-width:768px){
-  .shell{flex-direction:column;}
-  .sidebar{width:100%;min-height:auto;flex-direction:row;padding:10px 16px;position:fixed;bottom:0;left:0;right:0;z-index:50;border-right:none;border-top:1px solid var(--border);backdrop-filter:blur(24px);}
-  .logo-block,.sidebar-spacer,.streak-card,.nav-label,.nav-pill,.nav-pulse{display:none;}
-  .nav-menu{flex-direction:row;flex:1;justify-content:space-around;}
-  .nav-item{flex-direction:column;gap:4px;padding:8px;font-size:.65rem;}
-  .nav-item .nav-icon{font-size:1.3rem;}
-  .main{padding:20px 16px 90px;}
+@media(max-width:600px){
+  .page-head{flex-direction:column;align-items:flex-start;gap:12px;}
+  .filter-bar{justify-content:flex-start;}
   .chart-grid{grid-template-columns:1fr;}
-  .stats-row{grid-template-columns:1fr 1fr;}
-  .fg-row{grid-template-columns:1fr;}
-  .page-title{font-size:1.5rem;}
 }
